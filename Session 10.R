@@ -68,6 +68,62 @@ breaks=str_locate(emails,"\n\n")
 headers=str_sub(emails,end=breaks[,1])
 bodies=str_sub(emails,start = breaks[,2])
 
+cat(bodies[3])
+
+### Second Lab
+
+#1. 
+fruit=c("apple","banana","pear","pineapple")
+
+#2.
+## detects if the pattern is found
+str_detect(fruit,"a")
+
+## pattern starts with a
+str_detect(fruit,"^a")
+
+## pattern ends with an a
+str_detect(fruit,"a$")
+
+## pattern to check if it has a or e or i or o or u
+str_detect(fruit,"[aeiou]")
+
+str_detect(fruit,"[a-d]")
+str_detect(fruit,"[abcd]")
+
+str_detect(fruit,"[0-9]")
+
+
+
+#3.
+str_detect(fruit,"^a[a-z]e$")
+str_detect(fruit,"^a[a-z]*e$")
+
+### Dot could be any character or number
+str_detect(fruit,"^a.*e$")
+
+#4.
+phone=c("213 740 4826",
+      "213-740-4826",
+      "(213) 740 4826")
+str_detect(phone,"[(]?[0-9]{3}[)]?[ -][0-9]{3}[ -][0-9]{4}")
+
+## [ ] --> function or
+## ? --> optional
+
+#5.
+
+str_extract_all(bodies,"[(]?[0-9]{3}[)]?[ -][0-9]{3}[ -][0-9]{4}")
+
+
+
+
+
+
+
+
+
+
 
 
 
